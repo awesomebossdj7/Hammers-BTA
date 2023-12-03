@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "hammers",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Hammers",
+  "description": "Adds hammers which breaks 3x3 blocks!",
   "authors": [
-    "Turnip Labs"
+    "awesomebossdj7"
   ],
   "contact": {
     "homepage": "",
@@ -18,11 +18,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-        "turniplabs.examplemod.ExampleMod"
+        "awesoft.hammers.Hammers"
     ]
   },
   "mixins": [
-      "examplemod.mixins.json"
+      "hammers.mixins.json"
   ],
 
   "depends": {
