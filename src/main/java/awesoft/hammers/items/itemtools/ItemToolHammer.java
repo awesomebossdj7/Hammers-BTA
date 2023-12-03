@@ -5,6 +5,8 @@
 
 package awesoft.hammers.items.itemtools;
 
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,8 +50,45 @@ public class ItemToolHammer extends ItemTool {
 		MineBlock(x,y+1,z,entityliving.world);
 		MineBlock(x,y-1,z,entityliving.world);
 
-		float yRot = entityliving.yRot % 360;
+		//x
+		MineBlock(x+1,y+1,z,entityliving.world);
+		MineBlock(x+1,y,z,entityliving.world);
+		MineBlock(x+1,y-1,z,entityliving.world);
 
+		MineBlock(x-1,y+1,z,entityliving.world);
+		MineBlock(x-1,y,z,entityliving.world);
+		MineBlock(x-1,y-1,z,entityliving.world);
+
+		//z
+		MineBlock(x,y+1,z+1,entityliving.world);
+		MineBlock(x,y,z+1,entityliving.world);
+		MineBlock(x,y-1,z+1,entityliving.world);
+
+		MineBlock(x,y+1,z-1,entityliving.world);
+		MineBlock(x,y,z-1,entityliving.world);
+		MineBlock(x,y-1,z-1,entityliving.world);
+
+
+
+
+		MineBlock(x+1,y+1,z+1,entityliving.world);
+		MineBlock(x+1,y,z+1,entityliving.world);
+		MineBlock(x+1,y-1,z+1,entityliving.world);
+
+		MineBlock(x+1,y+1,z-1,entityliving.world);
+		MineBlock(x+1,y,z-1,entityliving.world);
+		MineBlock(x+1,y-1,z-1,entityliving.world);
+
+		MineBlock(x-1,y+1,z+1,entityliving.world);
+		MineBlock(x-1,y,z+1,entityliving.world);
+		MineBlock(x-1,y-1,z+1,entityliving.world);
+
+		MineBlock(x-1,y+1,z-1,entityliving.world);
+		MineBlock(x-1,y,z-1,entityliving.world);
+		MineBlock(x-1,y-1,z-1,entityliving.world);
+
+		float yRot = entityliving.yRot % 360;
+/*
 		//x
 		if (yRot < 225 && yRot > 135) {
 			MineBlock(x+1,y+1,z,entityliving.world);
@@ -99,7 +138,7 @@ public class ItemToolHammer extends ItemTool {
 		//z
 		//46 - 134
 		//224 - 314
-
+*/
 
 
 
@@ -108,11 +147,19 @@ public class ItemToolHammer extends ItemTool {
 
 	protected void MineBlock(int x, int y, int z, World world) {
 		if (world.getBlock(x, y, z) != null) {
-			ItemStack[] item = world.getBlock(x, y, z).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getBlockTileEntity(x, y, z));
-			world.setBlockWithNotify(x, y, z, 0);
-			for (ItemStack itemStack : item) {
-				world.dropItem(x, y, z, itemStack);
+			if (world.getBlock(x,y,z).id != Block.bedrock.id) {
+				ItemStack[] item = world.getBlock(x, y, z).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getBlockTileEntity(x, y, z));
+				world.setBlockWithNotify(x, y, z, 0);
+				if (item != null) {
+					for (ItemStack itemStack : item) {
+						if (itemStack != null) {
+							world.dropItem(x, y, z, itemStack);
+						}
+					}
+				}
 			}
 		}
 	}
 }
+
+
