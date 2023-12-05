@@ -4,3 +4,17 @@ item.hammers.tool.pickaxe.hammer.iron.name=Iron Hammer
 item.hammers.tool.pickaxe.hammer.gold.name=Golden Hammer
 item.hammers.tool.pickaxe.hammer.diamond.name=Diamond Hammer
 item.hammers.tool.pickaxe.hammer.steel.name=Steel Hammer
+
+item.hammers.tool.shovel.excavator.wooden.name=Wooden Excavator
+item.hammers.tool.shovel.excavator.stone.name=Stone Excavator
+item.hammers.tool.shovel.excavator.iron.name=Iron Excavator
+item.hammers.tool.shovel.excavator.gold.name=Golden Excavator
+item.hammers.tool.shovel.excavator.diamond.name=Diamond Excavator
+item.hammers.tool.shovel.excavator.steel.name=Steel Excavator
+
+item.hammers.tool.axe.veinaxe.wooden.name=Wooden Vein Axe
+item.hammers.tool.axe.veinaxe.stone.name=Stone Vein Axe
+item.hammers.tool.axe.veinaxe.iron.name=Iron Vein Axe
+item.hammers.tool.axe.veinaxe.gold.name=Golden Vein Axe
+item.hammers.tool.axe.veinaxe.diamond.name=Diamond Vein Axe
+item.hammers.tool.axe.veinaxe.steel.name=Steel Vein Axe

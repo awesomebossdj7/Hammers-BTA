@@ -5,12 +5,6 @@
 
 package awesoft.hammers.items.itemtools;
 
-import java.sql.Array;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.EntityLiving;
@@ -20,23 +14,17 @@ import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.item.tool.ItemTool;
 import net.minecraft.core.item.tool.ItemToolPickaxe;
 import net.minecraft.core.world.World;
-import static awesoft.hammers.Hammers.LOGGER;
-import static javax.management.Query.and;
 
-public class ItemToolHammer extends ItemTool {
-	public static Map<Block, Integer> miningLevels = ItemToolPickaxe.miningLevels;
+import java.util.Map;
 
-	public ItemToolHammer(String name, int id, ToolMaterial enumtoolmaterial) {
-		super(name, id, 2, enumtoolmaterial, BlockTags.MINEABLE_BY_PICKAXE);
+public class ItemToolExcavator extends ItemTool {
+
+	public ItemToolExcavator(String name, int id, ToolMaterial enumtoolmaterial) {
+		super(name, id, 2, enumtoolmaterial, BlockTags.MINEABLE_BY_SHOVEL);
 	}
 
 	public boolean canHarvestBlock(Block block) {
-		Integer miningLevel = (Integer) miningLevels.get(block);
-		if (miningLevel != null) {
-			return this.material.getMiningLevel() >= miningLevel;
-		} else {
-			return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE);
-		}
+		return block.hasTag(BlockTags.MINEABLE_BY_SHOVEL);
 	}
 
 	@Override
@@ -47,47 +35,17 @@ public class ItemToolHammer extends ItemTool {
 		int z = l;
 
 
-		MineBlock(x,y+1,z,entityliving.world);
-		MineBlock(x,y-1,z,entityliving.world);
-
-		//x
-		MineBlock(x+1,y+1,z,entityliving.world);
-		MineBlock(x+1,y,z,entityliving.world);
-		MineBlock(x+1,y-1,z,entityliving.world);
-
-		MineBlock(x-1,y+1,z,entityliving.world);
-		MineBlock(x-1,y,z,entityliving.world);
-		MineBlock(x-1,y-1,z,entityliving.world);
-
-		//z
-		MineBlock(x,y+1,z+1,entityliving.world);
-		MineBlock(x,y,z+1,entityliving.world);
-		MineBlock(x,y-1,z+1,entityliving.world);
-
-		MineBlock(x,y+1,z-1,entityliving.world);
-		MineBlock(x,y,z-1,entityliving.world);
-		MineBlock(x,y-1,z-1,entityliving.world);
-
-
-
-
-		MineBlock(x+1,y+1,z+1,entityliving.world);
 		MineBlock(x+1,y,z+1,entityliving.world);
-		MineBlock(x+1,y-1,z+1,entityliving.world);
-
-		MineBlock(x+1,y+1,z-1,entityliving.world);
+		MineBlock(x+1,y,z,entityliving.world);
 		MineBlock(x+1,y,z-1,entityliving.world);
-		MineBlock(x+1,y-1,z-1,entityliving.world);
 
-		MineBlock(x-1,y+1,z+1,entityliving.world);
+		MineBlock(x,y,z+1,entityliving.world);
+		MineBlock(x,y,z,entityliving.world);
+		MineBlock(x,y,z-1,entityliving.world);
+
 		MineBlock(x-1,y,z+1,entityliving.world);
-		MineBlock(x-1,y-1,z+1,entityliving.world);
-
-		MineBlock(x-1,y+1,z-1,entityliving.world);
+		MineBlock(x-1,y,z,entityliving.world);
 		MineBlock(x-1,y,z-1,entityliving.world);
-		MineBlock(x-1,y-1,z-1,entityliving.world);
-
-		float yRot = entityliving.yRot % 360;
 /*
 		//x
 		if (yRot < 225 && yRot > 135) {
@@ -148,13 +106,17 @@ public class ItemToolHammer extends ItemTool {
 
 	protected void MineBlock(int x, int y, int z, World world) {
 		if (world.getBlock(x, y, z) != null) {
-			if (world.getBlock(x,y,z).id != Block.bedrock.id) {
-				ItemStack[] item = world.getBlock(x, y, z).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getBlockTileEntity(x, y, z));
-				world.setBlockWithNotify(x, y, z, 0);
-				if (item != null) {
-					for (ItemStack itemStack : item) {
-						if (itemStack != null) {
-							world.dropItem(x, y, z, itemStack);
+			if (!world.getBlock(x,y,z).hasTag(BlockTags.MINEABLE_BY_PICKAXE)) {
+				if (!world.getBlock(x,y,z).hasTag(BlockTags.MINEABLE_BY_AXE)) {
+					if (world.getBlock(x,y,z).id != Block.bedrock.id) {
+						ItemStack[] item = world.getBlock(x, y, z).getBreakResult(world, EnumDropCause.PROPER_TOOL, x, y, z, world.getBlockMetadata(x, y, z), world.getBlockTileEntity(x, y, z));
+						world.setBlockWithNotify(x, y, z, 0);
+						if (item != null) {
+							for (ItemStack itemStack : item) {
+								if (itemStack != null) {
+									world.dropItem(x, y, z, itemStack);
+								}
+							}
 						}
 					}
 				}
