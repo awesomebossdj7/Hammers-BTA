@@ -1,0 +1,34 @@
+item.hammers.tool.pickaxe.hammer.wooden.name=Martello di legno
+item.hammers.tool.pickaxe.hammer.stone.name=Martello di pietra
+item.hammers.tool.pickaxe.hammer.iron.name=Martello di ferro
+item.hammers.tool.pickaxe.hammer.gold.name=Martello d'oro
+item.hammers.tool.pickaxe.hammer.diamond.name=Martello di diamante
+item.hammers.tool.pickaxe.hammer.steel.name=Martello d'acciaio
+
+item.hammers.tool.shovel.excavator.wooden.name=Badile di legno
+item.hammers.tool.shovel.excavator.stone.name=Badile di pietra
+item.hammers.tool.shovel.excavator.iron.name=Badile di ferro
+item.hammers.tool.shovel.excavator.gold.name=Badile d'oro
+item.hammers.tool.shovel.excavator.diamond.name=Badile di diamante
+item.hammers.tool.shovel.excavator.steel.name=Badile d'acciaio
+
+item.hammers.tool.axe.veinaxe.wooden.name=Venascia di legno
+item.hammers.tool.axe.veinaxe.stone.name=Venascia di pietra
+item.hammers.tool.axe.veinaxe.iron.name=Venascia di ferro
+item.hammers.tool.axe.veinaxe.gold.name=Venascia d'oro
+item.hammers.tool.axe.veinaxe.diamond.name=Venascia di diamante
+item.hammers.tool.axe.veinaxe.steel.name=Venascia d'acciaio
+
+item.hammers.tool.pickaxe.hammer.wooden.desc=Scava un'area 3x3
+item.hammers.tool.pickaxe.hammer.stone.desc=Scava un'area  3x3 
+item.hammers.tool.pickaxe.hammer.iron.desc=Scava un'area 3x3 
+item.hammers.tool.pickaxe.hammer.gold.desc=Scava un'area 3x3 
+item.hammers.tool.pickaxe.hammer.diamond.desc=Scava un'area 3x3 
+item.hammers.tool.pickaxe.hammer.steel.desc=Scava un'area 3x3 
+
+item.hammers.tool.shovel.excavator.wooden.desc=Scava un'area 3x3 
+item.hammers.tool.shovel.excavator.stone.desc=Scava un'area 3x3 
+item.hammers.tool.shovel.excavator.iron.desc=Scava un'area 3x3 
+item.hammers.tool.shovel.excavator.gold.desc=Scava un'area 3x3 
+item.hammers.tool.shovel.excavator.diamond.desc=Scava un'area 3x3 
+item.hammers.tool.shovel.excavator.steel.desc=Scava un'area 3x3 
