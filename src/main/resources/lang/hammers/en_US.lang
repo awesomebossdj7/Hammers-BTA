@@ -18,3 +18,17 @@ item.hammers.tool.axe.veinaxe.iron.name=Iron Vein Axe
 item.hammers.tool.axe.veinaxe.gold.name=Golden Vein Axe
 item.hammers.tool.axe.veinaxe.diamond.name=Diamond Vein Axe
 item.hammers.tool.axe.veinaxe.steel.name=Steel Vein Axe
+
+item.hammers.tool.pickaxe.hammer.wooden.desc=Mine a 3x3 area
+item.hammers.tool.pickaxe.hammer.stone.desc=Mine a 3x3 area
+item.hammers.tool.pickaxe.hammer.iron.desc=Mine a 3x3 area
+item.hammers.tool.pickaxe.hammer.gold.desc=Mine a 3x3 area
+item.hammers.tool.pickaxe.hammer.diamond.desc=Mine a 3x3 area
+item.hammers.tool.pickaxe.hammer.steel.desc=Mine a 3x3 area
+
+item.hammers.tool.shovel.excavator.wooden.desc=Dig a 3x3 area
+item.hammers.tool.shovel.excavator.stone.desc=Dig a 3x3 area
+item.hammers.tool.shovel.excavator.iron.desc=Dig a 3x3 area
+item.hammers.tool.shovel.excavator.gold.desc=Dig a 3x3 area
+item.hammers.tool.shovel.excavator.diamond.desc=Dig a 3x3 area
+item.hammers.tool.shovel.excavator.steel.desc=Dig a 3x3 area
